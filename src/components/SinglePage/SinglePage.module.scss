@@ -1,0 +1,72 @@
+$slider-transition: 0.5s;
+$dot-size: 1em;
+$dot-margin: 1.5em;
+$dot-backgroundColor: #e65050;
+$dot-border: #ffffff;
+$dot-border-size: 2px;
+$dot-slider-transition: 0.5s;
+
+:export {
+  dotSize: $dot-size;
+  sliderSpeed: $slider-transition;
+}
+
+.style {
+  :global {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    #single-page-wrap {
+      position: relative;
+      transition: $slider-transition;
+      .page-section {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto;
+      }
+      .page-dot-wrap {
+        position: fixed;
+        top: 50%;
+        width: $dot-size;
+        right: 1.5em;
+        padding: 0.5em 0;
+        border-radius: 1000px;
+        z-index: 1000;
+        .page-dot {
+          cursor: pointer;
+          position: relative;
+          width: $dot-size;
+          height: $dot-size;
+          margin-bottom: $dot-margin;
+          border: $dot-border-size solid $dot-border;
+          border-radius: 1000px;
+          background-color: rgba(0, 0, 0, 0.5);
+          transition: 0.25s;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          &.active {
+            background-color: $dot-backgroundColor;
+            &::before {
+              background-color: transparent;
+              transform: scale(1) translate3d(-50%, -50%, 0px);
+            }
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: $dot-size;
+            height: $dot-size;
+            background-color: $dot-border;
+            border-radius: 1000px;
+            transform: scale(0.5) translate3d(-50%, -50%, 0px);
+            transition: $dot-slider-transition;
+          }
+        }
+      }
+    }
+  }
+}

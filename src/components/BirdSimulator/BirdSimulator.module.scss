@@ -1,0 +1,69 @@
+$mouse-pointer-aim: 1.25em;
+
+.style {
+  cursor: none;
+  user-select: none;
+  width: 100%;
+  height: 100%;
+  :global {
+    display: block;
+    #bird-background {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      h1 {
+        font-size: 8em;
+        color: white;
+        text-align: center;
+      }
+      h2 {
+        font-size: 2em;
+        color: slategray;
+        text-align: center;
+      }
+      .edge-container {
+        width: 100%;
+        height: 100%;
+        padding: 2em;
+        border-radius: 1000px;
+        background-color: white;
+      }
+    }
+    #mouse-pointer {
+      position: absolute;
+      width: 0.75em;
+      height: 0.75em;
+      transform: translate3d(-50%, -50%, 0);
+      border-radius: 1000px;
+      border: 1px solid white;
+      background-color: #38342c;
+      animation-name: rotateAnimation;
+      animation-duration: 2s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      z-index: 0;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 1px;
+        height: $mouse-pointer-aim;
+        transform: translate3d(-50%, -50%, 0);
+        background-color: white;
+        z-index: -1;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: $mouse-pointer-aim;
+        height: 1px;
+        transform: translate3d(-50%, -50%, 0);
+        background-color: white;
+        z-index: -1;
+      }
+    }
+  }
+}
