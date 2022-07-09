@@ -32,12 +32,12 @@
 }
 
 @font-face {
-  font-family: "SCDream";
-  src: url("/fonts/SCDream.woff") format("truetype");
+  font-family: "SCDreamLocal";
+  src: url("/fonts/SCDream.woff");
 }
 @font-face {
-  font-family: "SCDreamGit";
-  src: url("/SIMHANSOL/fonts/SCDream.woff") format("truetype");
+  font-family: "SCDreamGitPage";
+  src: url("/SIMHANSOL/fonts/SCDream.woff");
 }
 
 html {
@@ -50,10 +50,11 @@ html {
   }
   body {
     word-break: keep-all;
-    font-family: "SCDream", "SCDreamGit", "Roboto";
+    font-family: "SCDreamLocal", "SCDreamGitPage", "Roboto";
     a {
       text-decoration: none;
-      &:hover {
+      &:hover,
+      &:focus {
         text-decoration: underline;
       }
     }
