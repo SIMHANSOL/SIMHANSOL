@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Sim Hansol</title>
       </Head>
-      <ContextProvider prefix={prefix}>
+      <ContextProvider value={{ prefix: prefix }}>
         <Component {...pageProps} />
       </ContextProvider>
     </>
