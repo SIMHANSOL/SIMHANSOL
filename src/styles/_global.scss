@@ -41,14 +41,24 @@
 }
 
 html {
-  font-size: 15px;
-  @include tablet {
-    font-size: 13px;
-  }
-  @include mobile {
-    font-size: 12px;
-  }
   body {
+    line-height: 1.5;
+    font-size: 16px;
+    @include large-tablet {
+      font-size: 15px;
+    }
+    @include small-tablet {
+      font-size: 14px;
+    }
+    @include large-mobile {
+      font-size: 13px;
+    }
+    @include normal-mobile {
+      font-size: 12px;
+    }
+    @include small-mobile {
+      font-size: 11px;
+    }
     word-break: keep-all;
     font-family: "SCDreamLocal", "SCDreamGitPage", "Roboto";
     a {
@@ -56,14 +66,6 @@ html {
       &:hover,
       &:focus {
         text-decoration: underline;
-      }
-    }
-    hr {
-      &.hr-desktop {
-        display: none;
-        @include desktop {
-          display: block;
-        }
       }
     }
   }

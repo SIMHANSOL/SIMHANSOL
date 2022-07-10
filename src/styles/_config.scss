@@ -1,17 +1,39 @@
-@mixin desktop {
+$primary-color: #1e90ff;
+$secondary-color: #ffe221;
+$background-color: #fff;
+
+@mixin large-tablet {
+  @media (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin normal-tablet {
   @media (max-width: 1200px) {
     @content;
   }
 }
 
-@mixin tablet {
+@mixin small-tablet {
   @media (max-width: 992px) {
     @content;
   }
 }
 
-@mixin mobile {
+@mixin large-mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin normal-mobile {
   @media (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin small-mobile {
+  @media (max-width: 374px) {
     @content;
   }
 }

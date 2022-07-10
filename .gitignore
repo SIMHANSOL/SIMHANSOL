@@ -2,8 +2,8 @@
 /node_modules
 
 # next
-/.next/
-/out/
+/.next
+/out
 
 # production
 /build

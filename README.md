@@ -16,47 +16,6 @@ Please keep an eye on.&nbsp; `👉👌💦`
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=SIMHANSOL&layout=compact&theme=darcula)
 
-### 🔸 **_OS_**
-
-<img src="https://img.shields.io/badge/Windows 💖-0078D6?style=flat-square&logo=Windows&logoColor=white"/> &nbsp;
-<img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=Linux&logoColor=white"/> &nbsp;
-<img src="https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=Ubuntu&logoColor=white"/> &nbsp;
-<img src="https://img.shields.io/badge/CentOS-262577?style=flat-square&logo=CentOS&logoColor=white"/> &nbsp;
-
-### 🔸 **_IDE_**
-
-<img src="https://img.shields.io/badge/Visual Studio-5C2D91?style=flat-square&logo=Visual Studio&logoColor=white"/> &nbsp;
-<img src="https://img.shields.io/badge/Visual Studio Code 💖-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white"/> &nbsp;
-<img src="https://img.shields.io/badge/Eclipse IDE-2C2255?style=flat-square&logo=Eclipse IDE&logoColor=white"/> &nbsp;
-<img src="https://img.shields.io/badge/Android Studio-3DDC84?style=flat-square&logo=Android Studio&logoColor=white"/> &nbsp;
-
-### 🔸 **_PACKAGE MANAGER_**
-
-<img src="https://img.shields.io/badge/npm-CB3837?style=flat-square&logo=npm&logoColor=white"/> &nbsp;
-<img src="https://img.shields.io/badge/pnpm-F69220?style=flat-square&logo=pnpm&logoColor=white"/> &nbsp;
-<img src="https://img.shields.io/badge/Yarn 💖-2C8EBB?style=flat-square&logo=Yarn&logoColor=white"/> &nbsp;
-
-### 🔸 **_VERSION MANAGER_**
-
-<img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=Git&logoColor=white"/> &nbsp;
-<img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/> &nbsp;
-<img src="https://img.shields.io/badge/Bitbucket-0052CC?style=flat-square&logo=Bitbucket&logoColor=white"/> &nbsp;
-
-### 🔸 **_SERVICE MANAGER_**
-
-<img src="https://img.shields.io/badge/Amazon AWS 💖-232F3E?style=flat-square&logo=Amazon%20AWS&logoColor=white"/> &nbsp;
-<img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=Firebase&logoColor=white"/> &nbsp;
-<img src="https://img.shields.io/badge/docker-2496ED?style=flat-square&logo=docker&logoColor=white"/> &nbsp;
-<img src="https://img.shields.io/badge/Google Analytics 💖-E37400?style=flat-square&logo=Google Analytics&logoColor=white"/> &nbsp;
-<img src="https://img.shields.io/badge/Google AdMob-EA4335?style=flat-square&logo=Google AdMob&logoColor=white"/> &nbsp;
-
-### 🔸 **_BUNDLE / TEST LIBRARY_**
-
-<img src="https://img.shields.io/badge/Webpack-8DD6F9?style=flat-square&logo=Webpack&logoColor=white"/> &nbsp;
-<img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=Vite&logoColor=white"/> &nbsp;
-<img src="https://img.shields.io/badge/Mocha-8D6748?style=flat-square&logo=Mocha&logoColor=white"/> &nbsp;
-<img src="https://img.shields.io/badge/Jest-C21325?style=flat-square&logo=Jest&logoColor=white"/> &nbsp;
-
 ### 🔹 **_WEB FRONT FRAME_**
 
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/> &nbsp;
@@ -113,6 +72,47 @@ Please keep an eye on.&nbsp; `👉👌💦`
 <img src="https://img.shields.io/badge/Java-e11f21?style=flat-square&logo=CoffeeScript&logoColor=white"/> &nbsp;
 <img src="https://img.shields.io/badge/Dart-02569B?style=flat-square&logo=Dart&logoColor=white"/> &nbsp;
 <img src="https://img.shields.io/badge/Flutter-0175C2?style=flat-square&logo=Flutter&logoColor=white"/> &nbsp;
+
+### 🔸 **_BUNDLE / TEST LIBRARY_**
+
+<img src="https://img.shields.io/badge/Webpack-8DD6F9?style=flat-square&logo=Webpack&logoColor=white"/> &nbsp;
+<img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=Vite&logoColor=white"/> &nbsp;
+<img src="https://img.shields.io/badge/Mocha-8D6748?style=flat-square&logo=Mocha&logoColor=white"/> &nbsp;
+<img src="https://img.shields.io/badge/Jest-C21325?style=flat-square&logo=Jest&logoColor=white"/> &nbsp;
+
+### 🔸 **_PACKAGE MANAGER_**
+
+<img src="https://img.shields.io/badge/npm-CB3837?style=flat-square&logo=npm&logoColor=white"/> &nbsp;
+<img src="https://img.shields.io/badge/pnpm-F69220?style=flat-square&logo=pnpm&logoColor=white"/> &nbsp;
+<img src="https://img.shields.io/badge/Yarn 💖-2C8EBB?style=flat-square&logo=Yarn&logoColor=white"/> &nbsp;
+
+### 🔸 **_VERSION MANAGER_**
+
+<img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=Git&logoColor=white"/> &nbsp;
+<img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/> &nbsp;
+<img src="https://img.shields.io/badge/Bitbucket-0052CC?style=flat-square&logo=Bitbucket&logoColor=white"/> &nbsp;
+
+### 🔸 **_SERVICE MANAGER_**
+
+<img src="https://img.shields.io/badge/Amazon AWS 💖-232F3E?style=flat-square&logo=Amazon%20AWS&logoColor=white"/> &nbsp;
+<img src="https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=Firebase&logoColor=white"/> &nbsp;
+<img src="https://img.shields.io/badge/docker-2496ED?style=flat-square&logo=docker&logoColor=white"/> &nbsp;
+<img src="https://img.shields.io/badge/Google Analytics 💖-E37400?style=flat-square&logo=Google Analytics&logoColor=white"/> &nbsp;
+<img src="https://img.shields.io/badge/Google AdMob-EA4335?style=flat-square&logo=Google AdMob&logoColor=white"/> &nbsp;
+
+### 🔸 **_OS_**
+
+<img src="https://img.shields.io/badge/Windows 💖-0078D6?style=flat-square&logo=Windows&logoColor=white"/> &nbsp;
+<img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=Linux&logoColor=white"/> &nbsp;
+<img src="https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=Ubuntu&logoColor=white"/> &nbsp;
+<img src="https://img.shields.io/badge/CentOS-262577?style=flat-square&logo=CentOS&logoColor=white"/> &nbsp;
+
+### 🔸 **_IDE_**
+
+<img src="https://img.shields.io/badge/Visual Studio-5C2D91?style=flat-square&logo=Visual Studio&logoColor=white"/> &nbsp;
+<img src="https://img.shields.io/badge/Visual Studio Code 💖-007ACC?style=flat-square&logo=Visual Studio Code&logoColor=white"/> &nbsp;
+<img src="https://img.shields.io/badge/Eclipse IDE-2C2255?style=flat-square&logo=Eclipse IDE&logoColor=white"/> &nbsp;
+<img src="https://img.shields.io/badge/Android Studio-3DDC84?style=flat-square&logo=Android Studio&logoColor=white"/> &nbsp;
 
 ### 🔸 **_OTHER_**
 

@@ -1,3 +1,5 @@
+@import "../../styles/config";
+
 .container {
   position: relative;
   width: 100%;
@@ -21,11 +23,188 @@
   .screen-title {
     position: absolute;
     top: 50%;
+    left: 200px;
     transform: translateY(-50%);
-    left: 100px;
     & > div {
+      font-size: 2.5em;
       color: #fff;
-      font-size: 6em;
+      text-align: end;
+      font-weight: bold;
+      opacity: 0;
+      animation-name: titleAnimation;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+      animation-duration: 2.5s;
+      animation-delay: 0.5s;
+      &:first-of-type {
+        padding-right: 80px;
+        animation-delay: 0.65s;
+      }
+      &:last-of-type {
+        color: $secondary-color;
+        padding-right: 40px;
+        animation-delay: 0.6s;
+      }
     }
+    @include normal-tablet {
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      & > div {
+        font-size: 2em;
+      }
+    }
+    @include small-tablet {
+      & > div {
+        font-size: 1.75em;
+      }
+    }
+    @include large-mobile {
+      & > div {
+        font-size: 1.5em;
+      }
+    }
+    @include normal-mobile {
+      left: 0%;
+      width: 100%;
+      transform: translateY(-50%);
+      & > div {
+        font-size: 1.5em;
+        text-align: center;
+        &:first-of-type {
+          padding-right: 0;
+          padding-left: 40px;
+        }
+        &:last-of-type {
+          padding-right: 0;
+          padding-left: 100px;
+        }
+      }
+    }
+    @include small-mobile {
+      & > div {
+        font-size: 1.25em;
+        &:first-of-type {
+          padding-right: 0;
+          padding-left: 0;
+        }
+        &:last-of-type {
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+  .event-box {
+    opacity: 0;
+    transform: translateY(10px);
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    .mouse {
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      width: 34px;
+      height: 52px;
+      border: 2px solid #fff;
+      border-radius: 1000px;
+      transform: translateX(-50%);
+      filter: drop-shadow(0px 0px 10px #000);
+      z-index: -1;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 6px;
+        width: 8px;
+        height: 14px;
+        border: 2px solid #fff;
+        border-radius: 1000px;
+        transform: translateX(-50%);
+      }
+    }
+    .hand-box {
+      position: absolute;
+      left: 52%;
+      bottom: 60px;
+      transform: scale(2);
+      animation-name: handBoxMove;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-duration: 1s;
+      animation-delay: 4s;
+      .hand {
+        width: 24px;
+        height: auto;
+        color: #fff;
+        transform: translateX(-2px) rotate(-25deg);
+        animation-name: handRotate;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-duration: 2.5s;
+        animation-delay: 0s;
+      }
+    }
+  }
+}
+
+@keyframes titleAnimation {
+  0% {
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 80% 80%);
+    transform: translateY(-50px);
+    text-shadow: none;
+    opacity: 0;
+  }
+  50% {
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0% 30%);
+    transform: translateY(0px);
+    text-shadow: none;
+    opacity: 0.35;
+  }
+  100% {
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0%);
+    transform: translateY(0px);
+    text-shadow: 0px 0px 12px #f0f0f0;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  35% {
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes handBoxMove {
+  0% {
+    left: 52%;
+    bottom: 60px;
+    transform: scale(2);
+  }
+  100% {
+    left: 49.85%;
+    bottom: 80px;
+    transform: scale(1);
+  }
+}
+
+@keyframes handRotate {
+  0% {
+    transform: translate3d(-2px 0px 0px) rotate(-25deg);
+  }
+  50% {
+    transform: translate3d(0px, 4px, 0px) rotate(-40deg);
+  }
+  100% {
+    transform: translate3d(-2px, 0px, 0px) rotate(-25deg);
   }
 }

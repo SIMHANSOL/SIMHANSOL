@@ -33,13 +33,13 @@ const Home: NextPage<props> = (props) => {
       background.style.backgroundImage = `url('${readContext.prefix}/images/bird_simulator/background.png')`;
     }
     setBird(bird);
-  }, []);
+  }, [readContext.prefix]);
 
   useEffect(() => {
     if (getBird) {
       getBird.play(props.play);
     }
-  }, [props.play]);
+  }, [getBird, props.play]);
 
   return (
     <div className={styles.style}>

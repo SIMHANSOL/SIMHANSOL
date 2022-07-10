@@ -1,37 +1,22 @@
 import scss from "./SinglePage.module.scss";
-import { useState, useEffect, useRef, Fragment, RefObject } from "react";
+import { useState, useEffect, useRef, Fragment, RefObject, useCallback } from "react";
 import Home from "../Home";
+
+interface mouseHandler {
+  positionX: number;
+  positionY: number;
+}
 
 const App = () => {
   const [getSelectPage, setSelectPage] = useState(0);
   const [getDotLength, setDotLength] = useState(0);
+  const [getMouseHandler, setMouseHandler] = useState<mouseHandler>({ positionX: 0, positionY: 0 });
 
   const pageWrap = useRef<HTMLDivElement>(null);
   const dotWrap = useRef<HTMLDivElement>(null);
 
-  /** 페이지 수 확인 */
-  useEffect(() => {
-    const dotWrapElement = dotWrap.current;
-    if (dotWrapElement) {
-      const pageSectionNode = document.querySelectorAll("#page-wrap > div");
-      setDotLength(pageSectionNode.length);
-    }
-  }, []);
-
-  /** 마우스 휠 전환 이벤트 */
-  useEffect(() => {
-    const pageWrapElement = pageWrap.current;
-    if (pageWrapElement) {
-      const scrollTop = getSelectPage * 100;
-      pageWrapElement.style.top = `-${scrollTop}%`;
-
-      setTimeout(() => {
-        window.addEventListener("wheel", wheelEvent);
-      }, parseFloat(scss.sliderSpeed.replace(/[^\d.]/g, "")) * 1000);
-    }
-
-    function wheelEvent(event: WheelEvent) {
-      const eventRemove = () => window.removeEventListener("wheel", wheelEvent);
+  const wheelEvent = useCallback(
+    (event: WheelEvent) => {
       const page = document.querySelectorAll("#page-wrap > div");
       if (page.length > 0) {
         const windowHeight = window.innerHeight;
@@ -40,13 +25,77 @@ const App = () => {
         if (event.deltaY < 0) {
           if (pageTop <= 0 && getSelectPage > 0) {
             setSelectPage(getSelectPage - 1);
-            eventRemove();
+            window.removeEventListener("wheel", wheelEvent);
           }
         } else if (pageTop + windowHeight >= pageHeight && getSelectPage < page.length - 1) {
           setSelectPage(getSelectPage + 1);
-          eventRemove();
+          window.removeEventListener("wheel", wheelEvent);
         }
       }
+    },
+    [getSelectPage]
+  );
+
+  const touchStartEvent = useCallback(
+    (event: TouchEvent) => {
+      const handler: mouseHandler = Object.assign(getMouseHandler);
+      handler.positionX = event.touches[0].clientX;
+      handler.positionY = event.touches[0].clientY;
+      setMouseHandler(handler);
+    },
+    [getMouseHandler]
+  );
+
+  const touchMoveEvent = useCallback(
+    (event: TouchEvent) => {
+      const pageWrapElement = pageWrap.current;
+      if (pageWrapElement) {
+        const clientY = event.touches[0].clientY;
+        const handler: mouseHandler = Object.assign(getMouseHandler);
+        const deltaY = clientY - handler.positionY;
+        if (Math.abs(deltaY) > pageWrapElement.offsetHeight / getDotLength / 4) {
+          const page = Math.sign(deltaY) >= 0 ? getSelectPage - 1 : getSelectPage + 1;
+          if (page >= 0 && page < getDotLength) {
+            handler.positionY = clientY;
+            setMouseHandler(handler);
+            setSelectPage(page);
+            window.removeEventListener("touchmove", touchMoveEvent);
+          }
+        }
+      }
+    },
+    [getSelectPage, getDotLength, getMouseHandler]
+  );
+
+  /** 마우스 휠 전환 */
+  useEffect(() => {
+    setTimeout(() => {
+      window.addEventListener("wheel", wheelEvent);
+    }, parseFloat(scss.sliderSpeed.replace(/[^\d.]/g, "")) * 1000);
+  }, [wheelEvent]);
+
+  /** 터치 시작 이벤트 + 페이지 수 확인 */
+  useEffect(() => {
+    window.addEventListener("touchstart", touchStartEvent);
+
+    const dotWrapElement = dotWrap.current;
+    if (dotWrapElement) {
+      const pageSectionNode = document.querySelectorAll("#page-wrap > div");
+      setDotLength(pageSectionNode.length);
+    }
+  }, [touchStartEvent]);
+
+  /** 모바일 터치 화면 전환 */
+  useEffect(() => {
+    window.addEventListener("touchmove", touchMoveEvent);
+  }, [touchMoveEvent]);
+
+  /** 페이지 전환 */
+  useEffect(() => {
+    const pageWrapElement = pageWrap.current;
+    if (pageWrapElement) {
+      const scrollTop = getSelectPage * 100;
+      pageWrapElement.style.top = `-${scrollTop}%`;
     }
   }, [getSelectPage]);
 
