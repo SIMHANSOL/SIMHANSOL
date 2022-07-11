@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { ContextProvider } from "../contexts/context";
+import { PrefixProvider } from "../contexts";
 import { prefix } from "../configs";
 
 if (typeof window !== "undefined") {
@@ -20,11 +20,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Sim Hansol</title>
+        <title>한솔 박스</title>
       </Head>
-      <ContextProvider value={{ prefix: prefix }}>
+      <PrefixProvider value={{ prefix: prefix }}>
         <Component {...pageProps} />
-      </ContextProvider>
+      </PrefixProvider>
     </>
   );
 }

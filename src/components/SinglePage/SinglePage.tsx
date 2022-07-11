@@ -1,6 +1,8 @@
 import scss from "./SinglePage.module.scss";
-import { useState, useEffect, useRef, Fragment, RefObject, useCallback } from "react";
+import { useState, useEffect, useRef, RefObject, useCallback } from "react";
+import { SelectPageProvider } from "../../contexts";
 import Home from "../Home";
+import Introduce from "../Introduce";
 
 interface mouseHandler {
   positionX: number;
@@ -105,7 +107,9 @@ const App = () => {
         <div className={scss["page-section"]}>
           <Home />
         </div>
-        <div className={scss["page-section"]}>second screen</div>
+        <div className={scss["page-section"]}>
+          <Introduce />
+        </div>
         <div className={scss["page-section"]}>third screen</div>
         <div className={scss["page-section"]}>fourth screen</div>
         <div className={scss["page-section"]}>fifteen screen</div>
@@ -133,7 +137,7 @@ const App = () => {
     }
 
     return (
-      <Fragment>
+      <SelectPageProvider value={getSelectPage}>
         {dotArray.map((_, index) => {
           return (
             <div
@@ -143,7 +147,7 @@ const App = () => {
             />
           );
         })}
-      </Fragment>
+      </SelectPageProvider>
     );
   }
 };

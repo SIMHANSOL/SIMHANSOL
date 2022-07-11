@@ -1,7 +1,7 @@
 import styles from "../styles/bird_simulator/bird_simulator.module.scss";
 
 import { useState, useEffect, useContext } from "react";
-import context from "../../contexts/context";
+import { prefix } from "../../contexts";
 import type { NextPage } from "next";
 import Bird from "../../scripts/bird";
 
@@ -10,14 +10,14 @@ interface props {
 }
 
 const Home: NextPage<props> = (props) => {
-  const readContext = useContext(context);
+  const prefixContext = useContext(prefix);
   const [getBird, setBird] = useState<Bird | null>(null);
 
   useEffect(() => {
     // 마우스 포인터 대입 & 교체
     const birdElement = document.getElementById("bird");
     const mousePointer = document.getElementById("mouse-pointer");
-    const bird = new Bird(birdElement, readContext.prefix);
+    const bird = new Bird(birdElement, prefixContext.prefix);
     bird.setTargetElement(mousePointer);
     if (mousePointer) {
       window.addEventListener("mousemove", (event) => {
@@ -30,10 +30,10 @@ const Home: NextPage<props> = (props) => {
     // 백그라운드 설정
     const background = document.getElementById("bird-background");
     if (background) {
-      background.style.backgroundImage = `url('${readContext.prefix}/images/bird_simulator/background.png')`;
+      background.style.backgroundImage = `url('${prefixContext.prefix}/images/bird_simulator/background.png')`;
     }
     setBird(bird);
-  }, [readContext.prefix]);
+  }, [prefixContext.prefix]);
 
   useEffect(() => {
     if (getBird) {

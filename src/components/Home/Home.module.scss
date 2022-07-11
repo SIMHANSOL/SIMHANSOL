@@ -24,11 +24,12 @@
     position: absolute;
     top: 50%;
     left: 200px;
+    font-size: calc(1.375rem + 1.5vw);
     transform: translateY(-50%);
     & > div {
-      font-size: 2.5em;
       color: #fff;
       text-align: end;
+      font-size: 2.5em;
       font-weight: bold;
       opacity: 0;
       animation-name: titleAnimation;
