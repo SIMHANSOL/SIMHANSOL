@@ -5,16 +5,6 @@ import Head from "next/head";
 import { PrefixProvider } from "../contexts";
 import { prefix } from "../configs";
 
-if (typeof window !== "undefined") {
-  window.bootstrap = require("bootstrap/dist/js/bootstrap.bundle.js");
-}
-
-declare global {
-  interface Window {
-    bootstrap: NodeRequire;
-  }
-}
-
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
