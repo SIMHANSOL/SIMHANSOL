@@ -1,12 +1,57 @@
+@import "../../styles/_config.scss";
+
 .container {
+  position: relative;
   width: 100%;
   height: 100vh;
+  padding: 0 4em;
   overflow: hidden;
-  .flex-box {
+  .row {
     display: flex;
     width: 100%;
     height: 100%;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     align-items: center;
+    .col {
+      padding: 0.5em;
+      .item-box {
+        width: 150px;
+        height: 150px;
+        background-color: red;
+        border-radius: 8px;
+      }
+    }
+    .col-main {
+      flex: 2 0 0%;
+      width: 100%;
+
+      padding: 0.5em;
+    }
+    .col-item {
+      flex: 3 0 0%;
+      width: 100%;
+
+      padding: 0.5em;
+    }
+  }
+  .background {
+    & > svg {
+      position: absolute;
+      z-index: -1;
+      height: auto;
+    }
+    & > svg:first-of-type {
+      top: -90%;
+      left: 15%;
+      width: 80%;
+      color: #eee;
+    }
+    & > svg:last-of-type {
+      bottom: -75%;
+      right: -36.5%;
+      width: 75%;
+      color: #eee;
+    }
   }
 }

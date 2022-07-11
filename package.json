@@ -7,7 +7,6 @@
     "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add -f out/ && git checkout -b temp-for-deploy-gh-pages && git commit -m \"Deploy Next.js to gh-pages\" && git subtree split --prefix out -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages && git checkout main && git branch -D temp-for-deploy-gh-pages"
   },
   "dependencies": {
-    "bootstrap": "^5.1.3",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
