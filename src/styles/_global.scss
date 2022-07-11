@@ -40,11 +40,18 @@
   src: url("/SIMHANSOL/fonts/SCDream.woff");
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   body {
+    margin: 0;
     line-height: 1.5;
     font-size: 16px;
-    margin: 0;
+    background-color: #fff;
     @include large-tablet {
       font-size: 15px;
     }
@@ -69,11 +76,21 @@ html {
         text-decoration: underline;
       }
     }
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-weight: bold;
+      line-height: 1.2;
     }
+  }
+  img,
+  svg {
+    vertical-align: middle;
   }
 }
 
