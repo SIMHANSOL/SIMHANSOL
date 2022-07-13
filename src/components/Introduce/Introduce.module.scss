@@ -13,45 +13,93 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-    .col {
-      padding: 0.5em;
-      .item-box {
-        width: 150px;
-        height: 150px;
-        background-color: red;
-        border-radius: 8px;
-      }
-    }
     .col-main {
-      flex: 2 0 0%;
-      width: 100%;
-
-      padding: 0.5em;
-    }
-    .col-item {
       flex: 3 0 0%;
       width: 100%;
-
       padding: 0.5em;
+      margin-right: 5em;
+      .title {
+        padding-bottom: 0.5em;
+      }
+      .description {
+        padding-bottom: 2em;
+      }
+    }
+    .col-item {
+      flex: 4 0 0%;
+      width: 100%;
+      padding: 0.5em;
+      margin-left: 5em;
+      & > div:nth-of-type(1) > div:nth-of-type(3) > div,
+      & > div:nth-of-type(1) > div:nth-of-type(4) > div,
+      & > div:nth-of-type(2) > div:nth-of-type(1) > div,
+      & > div:nth-of-type(3) > div:nth-of-type(4) > div {
+        border: none;
+      }
+      & > div:nth-of-type(1) > div:nth-of-type(2) > div {
+        background: linear-gradient(45deg, #50b35a, #8ac748);
+      }
+      & > div:nth-of-type(2) > div:nth-of-type(2) > div {
+        background: linear-gradient(45deg, #8fc855, #bed656);
+      }
+      & > div:nth-of-type(3) > div:nth-of-type(3) > div {
+        background: linear-gradient(45deg, #ef8609, #f4a70e);
+      }
+      .col {
+        padding: 0.5em;
+        .item-box {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 150px;
+          height: 150px;
+          color: #fff;
+          border: 1px solid #ddd;
+          border-radius: 10px;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
     }
   }
   .background {
     & > svg {
       position: absolute;
-      z-index: -1;
       height: auto;
+      z-index: -1;
+      color: #eee;
+      animation-name: breathSquare;
+      animation-iteration-count: infinite;
+      animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation-duration: 3s;
     }
     & > svg:first-of-type {
       top: -90%;
       left: 15%;
       width: 80%;
-      color: #eee;
+      opacity: 0.6;
     }
     & > svg:last-of-type {
       bottom: -75%;
       right: -36.5%;
       width: 75%;
-      color: #eee;
+      opacity: 0.3;
     }
+  }
+}
+
+@keyframes breathSquare {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
   }
 }

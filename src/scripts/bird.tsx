@@ -172,19 +172,19 @@ class Bird {
     let maxAnimation = 0;
     switch (this.state) {
       case State.IDLE:
-        animationSprite = `${this.prefix}/images/bird_simulator/eagle/idle/${this.animationIndex}.png`;
+        animationSprite = `${this.prefix}/images/BirdSimulator/eagle/idle/${this.animationIndex}.png`;
         maxAnimation = 12;
         break;
       case State.MOVE:
-        animationSprite = `${this.prefix}/images/bird_simulator/eagle/move/${this.animationIndex}.png`;
+        animationSprite = `${this.prefix}/images/BirdSimulator/eagle/move/${this.animationIndex}.png`;
         maxAnimation = 10;
         break;
       case State.RUN:
-        animationSprite = `${this.prefix}/images/bird_simulator/eagle/run/${this.animationIndex}.png`;
+        animationSprite = `${this.prefix}/images/BirdSimulator/eagle/run/${this.animationIndex}.png`;
         maxAnimation = 7;
         break;
       case State.ATTACK:
-        animationSprite = `${this.prefix}/images/bird_simulator/eagle/attack/${this.animationIndex}.png`;
+        animationSprite = `${this.prefix}/images/BirdSimulator/eagle/attack/${this.animationIndex}.png`;
         maxAnimation = 15;
         if (this.animationIndex >= maxAnimation) {
           this.setState(State.IDLE);

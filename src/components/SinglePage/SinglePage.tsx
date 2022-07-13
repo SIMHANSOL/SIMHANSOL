@@ -3,6 +3,7 @@ import { useState, useEffect, useRef, RefObject, useCallback } from "react";
 import { SelectPageProvider } from "../../contexts";
 import Home from "../Home";
 import Introduce from "../Introduce";
+import Services from "../Services";
 
 interface mouseHandler {
   positionX: number;
@@ -110,7 +111,9 @@ const App = () => {
         <div className={scss["page-section"]}>
           <Introduce />
         </div>
-        <div className={scss["page-section"]}>third screen</div>
+        <div className={scss["page-section"]}>
+          <Services />
+        </div>
         <div className={scss["page-section"]}>fourth screen</div>
         <div className={scss["page-section"]}>fifteen screen</div>
         <div className={scss["page-section"]}>sixteen screen</div>

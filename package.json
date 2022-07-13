@@ -1,5 +1,6 @@
 {
-  "name": "sim-hansol",
+  "name": "hansol-box",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
