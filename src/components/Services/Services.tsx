@@ -1,10 +1,10 @@
 import scss from "./Services.module.scss";
-import { useContext } from "react";
+// import { useContext } from "react";
 import { DiamondFill } from "../../svgs";
-import { prefix } from "../../contexts";
+// import { prefix } from "../../contexts";
 
 const App = () => {
-  const prefixContext = useContext(prefix);
+  // const prefixContext = useContext(prefix);
 
   return (
     <div className={scss["container"]}>
